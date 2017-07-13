@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 
 from django.http import HttpResponse, Http404
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 from .models import Puzzle
 
@@ -21,10 +21,7 @@ def edit(request, puzzleId):
   return HttpResponse("You're editing puzzle %s" % puzzleId)
 
 def view(request, puzzleId):
-  try:
-    puzzle = Puzzle.objects.get(pk=puzzleId)
-  except Puzzle.DoesNotExist:
-    raise Http404("Puzzle does not exist")
+  puzzle = get_object_or_404(Puzzle, pk=puzzleId)
   context = {'puzzle': puzzle}
   return render(request, 'puzzles/view.html', context)
 
