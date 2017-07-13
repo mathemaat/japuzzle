@@ -1,7 +1,7 @@
 {% if puzzles %}
     <ul>
     {% for puzzle in puzzles %}
-        <li><a href="/puzzles/{{ puzzle.id }}/view">{{ puzzle.title }}</a></li>
+        <li><a href="{% url 'view' puzzle.id %}">{{ puzzle.title }}</a></li>
     {% endfor %}
     </ul>
 {% else %}
