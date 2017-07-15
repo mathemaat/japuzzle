@@ -1,0 +1,22 @@
+<h1>Insert a puzzle (step 1/2)</h1>
+
+<form action="{% url 'puzzles:insert' %}" method="POST">
+  {% csrf_token %}
+
+  <input type="hidden" name="step" value="1" />
+
+  <label for="puzzle-number">Number</label>
+  <input type="text" id="puzzle-number" name="number" />
+
+  <label for="puzzle-title">Title</label>
+  <input type="text" id="puzzle-title" name="title" />
+
+  <label for="puzzle-width">Width</label>
+  <input type="text" id="puzzle-width" name="width" />
+
+  <label for="puzzle-height">Height</label>
+  <input type="text" id="puzzle-height" name="height" />
+
+  <input type="submit" name="save" value="Save and continue" />
+</form>
+

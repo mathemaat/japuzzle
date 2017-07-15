@@ -19,7 +19,19 @@ def insert(request):
   return HttpResponseRedirect(reverse('puzzles:insert-metadata'))
 
 def insertMetadata(request):
-  return HttpResponse("You're inserting the puzzle's metadata")
+  fields = ['number', 'title', 'width', 'height']
+  context = {}
+  for field in fields:
+    context[field] = None
+  if (len(request.POST) >= 1):
+    for field in fields:
+      if field not in request.POST:
+        return Http404("Field '%s' was not posted" % field)
+      context[field] = request.POST[field]
+  if None in context.values():
+    return render(request, 'puzzles/insert/metadata.html', context)
+  else:
+    return HttpResponseRedirect(reverse('puzzles:insert-hints'))
 
 def insertHints(request):
   return HttpResponse("You're inserting the puzzle's hints")
