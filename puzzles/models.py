@@ -19,10 +19,10 @@ class Puzzle(models.Model):
   title    = models.CharField(max_length=128)
   width    = models.IntegerField(default=0)
   height   = models.IntegerField(default=0)
-  rowhints = models.TextField()
-  colhints = models.TextField()
+  rowhints = models.TextField(editable=False)
+  colhints = models.TextField(editable=False)
 
-  puzzletype = models.ForeignKey(PuzzleType, null=True)
+  puzzletype = models.ForeignKey(PuzzleType)
 
   def __str__(self):
     return '%d. %s' % (self.number, self.title)
