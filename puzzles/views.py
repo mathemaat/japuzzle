@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.http import HttpResponse, Http404
+from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.shortcuts import render, get_object_or_404
+from django.urls import reverse
 
 from .models import Puzzle
 
@@ -15,7 +16,13 @@ def index(request):
   return render(request, 'puzzles/index.html', context)
 
 def insert(request):
-  return HttpResponse("You're inserting a puzzle")
+  return HttpResponseRedirect(reverse('puzzles:insert-metadata'))
+
+def insertMetadata(request):
+  return HttpResponse("You're inserting the puzzle's metadata")
+
+def insertHints(request):
+  return HttpResponse("You're inserting the puzzle's hints")
 
 def edit(request, puzzleId):
   return HttpResponse("You're editing puzzle %s" % puzzleId)
