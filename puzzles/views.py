@@ -9,9 +9,7 @@ from .models import Puzzle
 # Create your views here.
 def index(request):
   puzzles = Puzzle.objects.all()
-  context = {
-    'puzzles': puzzles
-  }
+  context = {'puzzles': puzzles}
   return render(request, 'puzzles/index.html', context)
 
 def edit(request, puzzleId):
