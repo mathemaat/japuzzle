@@ -13,7 +13,9 @@ def index(request):
   return render(request, 'puzzles/index.html', context)
 
 def edit(request, puzzleId):
-  return HttpResponse("You're editing puzzle %s" % puzzleId)
+  puzzle = get_object_or_404(Puzzle, pk=puzzleId)
+  context = {'puzzle': puzzle}
+  return render(request, 'puzzles/edit.html', context)
 
 def view(request, puzzleId):
   puzzle = get_object_or_404(Puzzle, pk=puzzleId)

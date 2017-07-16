@@ -1,0 +1,33 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'puzzles/application.css' %}" />
+
+{% load numfilters %}
+
+<h1>Edit hints of {{ puzzle.number}}. {{puzzle.title}}</h1>
+
+<table class="puzzle-grid">
+
+  <!-- first line -->
+  <tr><th />
+    {% for i in puzzle.width|times %}
+      <th class="hints column-hints">
+        <input type="text" />
+      </th>
+    {% endfor %}
+  </tr>
+
+  <!-- remaining lines -->
+  {% for i in puzzle.height|times %}
+    <tr>
+      <th class="hints row-hints">
+        <input type="text" class="hint" />
+      </th>
+      {% for i in puzzle.width|times %}
+         <td />
+      {% endfor %}
+    </tr>
+  {% endfor %}
+  
+</table>
+

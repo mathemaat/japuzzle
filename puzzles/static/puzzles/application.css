@@ -1,0 +1,27 @@
+body, div, p, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, table, th, td {
+  font-weight: normal;
+  margin: 0px;
+  padding: 0px; }
+
+table {
+  table-layout: fixed;
+  border-collapse: collapse; }
+  table th, table td {
+    padding: 2px; }
+
+input {
+  border: 1px solid #000; }
+
+table.puzzle-grid {
+  border: 1px solid #000; }
+  table.puzzle-grid th {
+    border: 1px solid #000; }
+    table.puzzle-grid th input[type="text"] {
+      font-size: 12pt;
+      width: 24px;
+      text-align: center;
+      border: 1px solid #808080; }
+  table.puzzle-grid td {
+    border: 1px solid #808080; }
+
+/*# sourceMappingURL=application.css.map */

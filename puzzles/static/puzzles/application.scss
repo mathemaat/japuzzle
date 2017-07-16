@@ -1,0 +1,49 @@
+$black: #000;
+$grey:  #808080;
+
+body, div, p, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, table, th, td
+{
+  font-weight: normal;
+  margin: 0px;
+  padding: 0px;
+}
+
+table
+{
+  table-layout: fixed;
+  border-collapse: collapse;
+
+  th, td
+  {
+    padding: 2px;
+  }
+}
+
+input
+{
+  border: 1px solid $black;
+}
+
+table.puzzle-grid
+{
+  border: 1px solid $black;
+
+  th
+  {
+    border: 1px solid $black;
+
+    input[type="text"]
+    {
+      font-size: 12pt;
+      width: 24px;
+      text-align: center;
+      border: 1px solid $grey;
+    }
+  }
+
+  td
+  {
+    border: 1px solid $grey;
+  }
+}
+
