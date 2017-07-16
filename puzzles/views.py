@@ -14,9 +14,6 @@ def index(request):
   }
   return render(request, 'puzzles/index.html', context)
 
-def insert(request):
-  return HttpResponse("You're inserting a puzzle")
-
 def edit(request, puzzleId):
   return HttpResponse("You're editing puzzle %s" % puzzleId)
 
