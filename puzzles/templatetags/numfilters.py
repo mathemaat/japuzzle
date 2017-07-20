@@ -6,3 +6,7 @@ register = template.Library()
 def times(number):
   return range(number)
 
+@register.filter(name='fifth')
+def fifth(number):
+  return number % 5 == 0
+

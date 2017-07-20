@@ -3,6 +3,9 @@ body, div, p, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, te
   margin: 0px;
   padding: 0px; }
 
+br.clear {
+  clear: both; }
+
 table {
   table-layout: fixed;
   border-collapse: collapse; }
@@ -13,14 +16,20 @@ input {
   border: 1px solid #000; }
 
 table.puzzle-grid {
-  border: 1px solid #000; }
+  border: 2px solid #000; }
   table.puzzle-grid th {
-    border: 1px solid #000; }
-    table.puzzle-grid th input[type="text"] {
+    border: 2px solid #000; }
+    table.puzzle-grid th input.hint {
       font-size: 12pt;
       width: 24px;
       text-align: center;
       border: 1px solid #808080; }
+  table.puzzle-grid th.column-hints input.hint {
+    float: left;
+    clear: left;
+    margin-top: 4px; }
+    table.puzzle-grid th.column-hints input.hint:first-child {
+      margin-top: 0px; }
   table.puzzle-grid td {
     border: 1px solid #808080; }
 

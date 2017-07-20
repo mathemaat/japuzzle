@@ -12,7 +12,9 @@
   <tr><th />
     {% for i in puzzle.width|times %}
       <th class="hints column-hints">
-        <input type="text" />
+        <input type="text" class="hint" />
+        <input type="text" class="hint" />
+        <br class="clear" />
       </th>
     {% endfor %}
   </tr>
@@ -22,9 +24,17 @@
     <tr>
       <th class="hints row-hints">
         <input type="text" class="hint" />
+        <input type="text" class="hint" />
       </th>
       {% for i in puzzle.width|times %}
-         <td />
+<!--
+         {% if forloop.counter|fifth %}
+           <td class="fifth" />
+         {% else %}
+           <td />
+         {% endif %}
+-->
+        <td />
       {% endfor %}
     </tr>
   {% endfor %}

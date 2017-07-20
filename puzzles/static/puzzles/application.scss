@@ -8,6 +8,11 @@ body, div, p, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, te
   padding: 0px;
 }
 
+br.clear
+{
+  clear: both;
+}
+
 table
 {
   table-layout: fixed;
@@ -26,18 +31,34 @@ input
 
 table.puzzle-grid
 {
-  border: 1px solid $black;
+  border: 2px solid $black;
 
   th
   {
-    border: 1px solid $black;
+    border: 2px solid $black;
 
-    input[type="text"]
+    input.hint
     {
       font-size: 12pt;
       width: 24px;
       text-align: center;
       border: 1px solid $grey;
+    }
+  }
+
+  th.column-hints
+  {
+    input.hint
+    {
+      float: left;
+      clear: left;
+
+      margin-top: 4px;
+
+      &:first-child
+      {
+        margin-top: 0px;
+      }
     }
   }
 

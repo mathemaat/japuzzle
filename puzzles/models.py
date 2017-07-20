@@ -24,6 +24,8 @@ class Puzzle(models.Model):
 
   puzzletype = models.ForeignKey(PuzzleType)
 
+#default=lambda:PuzzleValidationState.objects.filter(token='INCOMPLETE').first()
+
   def __str__(self):
     return '%d. %s' % (self.number, self.title)
 
